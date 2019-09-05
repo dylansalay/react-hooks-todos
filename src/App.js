@@ -25,16 +25,22 @@ function App() {
   }
 
   function createTodoAtIndex(e, i) {
-    const newTodos = [...todos];
-    newTodos.splice(i + 1, 0, {
-      content: '',
-      isCompleted: false,
-    });
-    setTodos(newTodos);
-    setTimeout(() => {
-      document.forms[0].elements[i + 1].focus();
-    }, 0);
-  }
+     const newTodos = [...todos];
+     newTodos.splice(i + 1, 0, {
+       content: '',
+       isCompleted: false,
+     });
+     setTodos(newTodos);
+     setTimeout(() => {
+       document.forms[0].elements[i + 1].focus();
+     }, 0);
+   }
+
+   function updateTodoAtIndex(e, i) {
+     const newTodos = [...todos];
+     newTodos[i].content = e.target.value;
+     setTodos(newTodos);
+   }
   return (
     <div className="app">
       <div className="header">
