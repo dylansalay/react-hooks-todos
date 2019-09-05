@@ -24,10 +24,12 @@ function App() {
       </div>
       <form className="todo-list">
         <ul>
-          <div className="todo">
-            <div className="checkbox" />
-            <input type="text" value="Todo one" />
-          </div>
+          {todos.map((todo, i) => (
+            <div className="todo">
+              <div className="checkbox" />
+              <input type="text" value={todo.content} />
+            </div>
+          ))}
         </ul>
       </form>
     </div>
